@@ -2,7 +2,7 @@
  * @Description: menu item style
  * @Date: 2021-05-04 14:16:28
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-14 15:58:50
+ * @LastEditTime: 2021-05-14 20:24:39
  */
 
 .menuStyle(@direction: row, @borderPosition: bottom) {
@@ -10,7 +10,7 @@
   border-@{borderPosition}: @menu-border-width solid @menu-border-color;
 }
 
-.menuItemStyle(@mode: horizontal) when(@mode=horizontal) {
+.menuItemStyle(@mode) when(@mode=horizontal) {
   @borderPosition: bottom;
   @paddingVertical: 0;
   flex: 0;
@@ -26,7 +26,7 @@
   }
 }
 
-.menuItemStyle(@mode: horizontal) when(@mode=vertical) {
+.menuItemStyle(@mode) when(@mode=vertical) {
   @borderPosition: left;
   @paddingVertical: 0.5rem;
   flex: 1;

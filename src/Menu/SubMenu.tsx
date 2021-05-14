@@ -2,7 +2,7 @@
  * @Description: SubMenu
  * @Date: 2021-05-06 10:08:14
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-14 15:49:16
+ * @LastEditTime: 2021-05-14 19:57:08
  */
 
 import React, { CSSProperties, FC, FunctionComponentElement, ReactNode } from 'react';
@@ -35,7 +35,7 @@ const SubMenu: FC<SubMenuProps> = (props) => {
           </RotateTransition>
         </div>
       </div>
-      <ZoomTransition active={visible} timeout={300}>
+      <ZoomTransition active={visible}>
         <ul className={ulClass}>{children}</ul>
       </ZoomTransition>
     </li>
