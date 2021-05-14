@@ -1,0 +1,63 @@
+/*
+ * @Description: menu item style
+ * @Date: 2021-05-04 14:16:28
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-14 15:58:50
+ */
+
+.menuStyle(@direction: row, @borderPosition: bottom) {
+  flex-direction: @direction;
+  border-@{borderPosition}: @menu-border-width solid @menu-border-color;
+}
+
+.menuItemStyle(@mode: horizontal) when(@mode=horizontal) {
+  @borderPosition: bottom;
+  @paddingVertical: 0;
+  flex: 0;
+  padding: @paddingVertical @menu-item-padding-x;
+  align-items: center;
+  border-@{borderPosition}: @menu-item-active-border-width solid transparent;
+
+  &.menu-item-active,
+  &:focus,
+  &:hover {
+    color: @menu-item-active-color;
+    border-@{borderPosition}: @menu-item-active-border-width solid @menu-item-active-color;
+  }
+}
+
+.menuItemStyle(@mode: horizontal) when(@mode=vertical) {
+  @borderPosition: left;
+  @paddingVertical: 0.5rem;
+  flex: 1;
+  padding: @paddingVertical @menu-item-padding-x;
+  align-items: flex-start;
+  border-@{borderPosition}: @menu-item-active-border-width solid transparent;
+
+  &.menu-item-active,
+  &:focus,
+  &:hover {
+    color: @menu-item-active-color;
+    border-@{borderPosition}: @menu-item-active-border-width solid @menu-item-active-color;
+  }
+}
+
+.subMenuUlStyle(@mode: horizontal) when(@mode=horizontal) {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 120px;
+  box-shadow: @submenu-box-shadow;
+}
+
+.subMenuUlStyle(@mode: horizontal) when(@mode=vertical) {
+  position: relative;
+  top: 48px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 120px;
+  box-shadow: @submenu-box-shadow;
+}

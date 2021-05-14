@@ -1,0 +1,48 @@
+/*
+ * @Description: button mixin style
+ * @Date: 2021-05-13 15:54:44
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-14 15:54:52
+ */
+
+// control different size button style
+.buttonSize(@paddingY, @paddingX, @fontSize, @borderRadius) {
+  padding: @paddingY @paddingX;
+  font-size: @fontSize;
+  border-radius: @borderRadius;
+}
+
+// control different type button style
+.buttonStyle(
+@color,
+@bgColor: transparent,
+@borderColor: transparent,
+@hoverColor: @color,
+@hoverBgc: lighten(@bgColor, 8),
+@hoverBorderColor: lighten(@bgColor, 8)
+) {
+  color: @color;
+  background-color: @bgColor;
+  border-color: @borderColor;
+  &:hover {
+    color: @hoverColor;
+    background-color: @hoverBgc;
+    border-color: @hoverBorderColor;
+  }
+  &:active {
+    opacity: 0.8;
+  }
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: @btn-disabled-opacity;
+    &:hover {
+      color: @color;
+      background-color: @bgColor;
+      border-color: @borderColor;
+    }
+    * {
+      pointer-events: none;
+    }
+  }
+}
