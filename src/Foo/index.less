@@ -1,0 +1,17 @@
+.variables(@mode) when(@mode=horizontal) {
+  @color: red;
+}
+.variables(@mode) when(@mode=vertical) {
+  @color: green;
+}
+
+.foo-style(@position: top) {
+  .variables(vertical);
+  .foo-h1 {
+    font-size: 2rem;
+    color: @color;
+    border-@{position}: 1px @color solid;
+  }
+}
+
+.foo-style();

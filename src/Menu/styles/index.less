@@ -2,7 +2,7 @@
  * @Description: menu style
  * @Date: 2021-04-30 16:56:30
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-14 19:44:27
+ * @LastEditTime: 2021-05-15 11:47:58
  */
 
 @import '../../style/index';
@@ -48,10 +48,10 @@
       cursor: not-allowed;
     }
     &.menu-item-horizontal {
-      .menuItemStyle(horizontal);
+      .menuItemStyle(bottom,0,0,center);
     }
     &.menu-item-vertical {
-      .menuItemStyle(vertical);
+      .menuItemStyle(left,0.5rem,1,flex-start);
     }
   }
 
@@ -74,13 +74,13 @@
       }
     }
     .sub-menu-ul {
-      .subMenuUlStyle();
+      .subMenuUlStyle(absolute,3rem);
       flex-direction: column;
       &.sub-menu-horizontal {
-        .subMenuUlStyle();
+        .subMenuUlStyle(absolute,3rem);
       }
       &.sub-menu-vertical {
-        .subMenuUlStyle(vertical);
+        .subMenuUlStyle(relative,0.5rem);
       }
       // subMenu li
       .sp-menu-item {
