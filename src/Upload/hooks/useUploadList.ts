@@ -2,7 +2,7 @@
  * @Description: UploadList hook
  * @Date: 2021-05-12 14:43:50
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-17 15:23:19
+ * @LastEditTime: 2021-05-17 20:19:58
  */
 
 import { UploadFileProps } from '..';
