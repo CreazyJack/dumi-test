@@ -2,18 +2,31 @@
  * @Description: UploadList hook
  * @Date: 2021-05-12 14:43:50
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-12 14:49:12
+ * @LastEditTime: 2021-05-17 15:23:19
  */
 
 import { UploadFileProps } from '..';
 import { UploadListProps } from '../UploadList';
 
 const useUploadList = (props: UploadListProps) => {
-  const className = 'simple-upload-list';
-  const onRemove = (file: UploadFileProps) => {
+  const onRemove = (file: UploadFileProps) => () => {
     props.onRemove && props.onRemove(file);
   };
-  return { className, onRemove };
+
+  const onCopy = (file: UploadFileProps) => () => {
+    // 清除之前的选中结果
+    window?.getSelection()?.removeAllRanges();
+    // 创建一个 input，设置 value 并选中这个 input
+    const copyElement = document.createElement('input');
+    copyElement.setAttribute('value', file.name);
+    document.body.appendChild(copyElement);
+    copyElement.select();
+    document.execCommand('copy');
+    document.body.removeChild(copyElement);
+    window?.getSelection()?.removeAllRanges();
+  };
+
+  return { onRemove, onCopy };
 };
 
 export default useUploadList;

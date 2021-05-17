@@ -2,13 +2,14 @@
  * @Description: upload
  * @Date: 2021-05-11 14:05:14
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-12 15:51:59
+ * @LastEditTime: 2021-05-15 14:44:26
  */
 
 import React, { FC, ReactNode } from 'react';
 import Button from '../Button';
 import useUpload from './hooks/useUpload';
 import UploadList from './UploadList';
+import './styles/index.less';
 
 export type UploadFileStatus = 'ready' | 'uploading' | 'success' | 'failed';
 
@@ -16,8 +17,8 @@ export type OnRemoveType = (file: UploadFileProps) => void;
 
 export interface UploadFileProps {
   uid: string;
-  size: number;
   name: string;
+  size: number;
   status?: UploadFileStatus;
   percent?: number;
   raw?: File;
@@ -28,7 +29,7 @@ export interface UploadFileProps {
 export interface UploadProps {
   children?: ReactNode;
   action?: string;
-  defaultFileList: UploadFileProps[];
+  defaultFileList?: UploadFileProps[];
   onChange?: (file: UploadFileProps) => void; // 文件上传成功后调用
   beforeUpload?: (file: File) => boolean | Promise<File>;
   onProgress?: (percent: number, file: UploadFileProps) => void;

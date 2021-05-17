@@ -2,7 +2,7 @@
  * @Description: Menu display
  * @Date: 2021-05-14 15:49:55
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-15 11:56:06
+ * @LastEditTime: 2021-05-15 16:07:26
  */
 
 import React from 'react';
@@ -19,7 +19,7 @@ const MenuShow = () => {
         </Menu.SubMenu>
         <Menu.Item>4</Menu.Item>
       </Menu>
-      <Menu mode="vertical">
+      <Menu mode='vertical'>
         <Menu.Item>1</Menu.Item>
         <Menu.Item>2</Menu.Item>
         <Menu.SubMenu title="subMenu">

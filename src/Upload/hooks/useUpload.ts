@@ -2,7 +2,7 @@
  * @Description: upload hook
  * @Date: 2021-05-11 14:22:56
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-12 14:35:03
+ * @LastEditTime: 2021-05-15 15:18:50
  */
 
 import { ChangeEvent, ReactNode, useRef, useState } from 'react';
@@ -17,15 +17,12 @@ const useUpload = (props: UploadProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const children = handleContent(props.children);
 
-  const onClick = () => {
-    if (fileInputRef.current) fileInputRef.current.click();
-  };
+  const onClick = () => fileInputRef?.current?.click();
 
   const updateFileList = (updateFile: UploadFileProps, updateParams: Partial<UploadFileProps>) => {
     setFileList((preFileList) => {
       return preFileList.map((file) => {
-        if (file.uid === updateFile.uid) return { ...file, ...updateParams };
-        return file;
+        return file.uid === updateFile.uid ? { ...file, ...updateParams } : file;
       });
     });
   };

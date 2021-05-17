@@ -1,0 +1,77 @@
+/*
+ * @Description: Upload style
+ * @Date: 2021-05-15 11:04:22
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-17 16:09:18
+ */
+
+@import '../../styles/index.less';
+
+.simple-upload-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  list-style: none;
+  .upload-list-item {
+    display: flex;
+    align-items: center;
+    line-height: 2rem;
+    &:hover {
+      .upload-list-filename {
+        background-color: #f1f1f1;
+      }
+      .upload-list-delete-icon {
+        opacity: 1;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+    .upload-list-filename {
+      padding: 0 0.5rem;
+      border-radius: 5%;
+      cursor: pointer;
+      background-color: #fff;
+      transition: 0.3s;
+    }
+    .upload-list-status-icon {
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+      &.upload-list-status-icon-success {
+        color: @green;
+      }
+      &.upload-list-status-icon-uploading {
+        color: @blue;
+        transform: rotate(0deg);
+        animation-name: uploading-icon-rotate;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+      &.upload-list-status-icon-failed {
+        color: @red;
+      }
+      &.upload-list-status-icon-ready {
+        color: @yellow;
+      }
+    }
+    .upload-list-delete-icon {
+      margin-left: 0.5rem;
+      opacity: 0;
+      font-size: 1.2rem;
+      color: @red;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+  }
+}
+
+@keyframes uploading-icon-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
