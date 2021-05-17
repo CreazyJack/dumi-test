@@ -2,7 +2,7 @@
  * @Description: Upload display
  * @Date: 2021-05-15 14:21:35
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-17 16:31:57
+ * @LastEditTime: 2021-05-17 19:58:19
  */
 
 import React from 'react';
@@ -28,7 +28,7 @@ const fileList: UploadFileProps[] = [
     status: 'success',
   },
   {
-    name: 'test-file3asdlfjlasdf331355 .xxx',
+    name: 'test-file3asdlfjlasdf331355asdfasdfasdfasdfasdfasdfasdfasdf.xxx',
     uid: 'file3asdlfjlasdf331355',
     size: 339,
     status: 'failed',

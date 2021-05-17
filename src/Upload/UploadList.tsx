@@ -2,7 +2,7 @@
  * @Description: 未添加描述
  * @Date: 2021-05-12 14:40:38
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-17 16:11:30
+ * @LastEditTime: 2021-05-17 19:46:46
  */
 
 import React from 'react';
@@ -33,11 +33,11 @@ const UploadList: React.FC<UploadListProps> = (props) => {
       {props.fileList.map((file) => {
         return (
           <li className="upload-list-item" key={file.uid}>
+            <AiOutlineDelete className="upload-list-delete-icon" onClick={onRemove(file)} />
             {file.status ? icons[file.status] : null}
             <span className="upload-list-filename" onClick={onCopy(file)}>
               {file.name}
             </span>
-            <AiOutlineDelete className="upload-list-delete-icon" onClick={onRemove(file)} />
           </li>
         );
       })}

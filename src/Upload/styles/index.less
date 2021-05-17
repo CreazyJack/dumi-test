@@ -2,7 +2,7 @@
  * @Description: Upload style
  * @Date: 2021-05-15 11:04:22
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-17 16:09:18
+ * @LastEditTime: 2021-05-17 20:08:34
  */
 
 @import '../../styles/index.less';
@@ -12,18 +12,24 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   list-style: none;
+  user-select: none;
   .upload-list-item {
     display: flex;
     align-items: center;
     line-height: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     &:hover {
       .upload-list-filename {
         background-color: #f1f1f1;
       }
       .upload-list-delete-icon {
+        width: 1.5rem;
         opacity: 1;
+        margin-right: 0.5rem;
         &:hover {
           opacity: 0.6;
         }
@@ -46,7 +52,7 @@
         color: @blue;
         transform: rotate(0deg);
         animation-name: uploading-icon-rotate;
-        animation-duration: 1s;
+        animation-duration: 2s;
         animation-iteration-count: infinite;
       }
       &.upload-list-status-icon-failed {
@@ -57,7 +63,8 @@
       }
     }
     .upload-list-delete-icon {
-      margin-left: 0.5rem;
+      margin-right: 0;
+      width: 0;
       opacity: 0;
       font-size: 1.2rem;
       color: @red;
@@ -72,6 +79,6 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(720deg);
   }
 }
