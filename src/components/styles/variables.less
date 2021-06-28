@@ -2,21 +2,21 @@
  * @Description: variables and configurable settings
  * @Date: 2021-04-27 15:09:30
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-13 16:12:25
+ * @LastEditTime: 2021-06-25 11:13:25
  */
 
 // base color
 @white: #fff;
 @gray-100: #f8f9fa;
 @gray-200: #e9ecef;
-@gray-300: #dee2e6;
+@gray-300: #eaeaea;
 @gray-400: #ced4da;
 @gray-500: #adb5bd;
 @gray-600: #6c757d;
 @gray-700: #495057;
 @gray-800: #343a40;
 @gray-900: #212529;
-@black: #000;
+@black: rgba(0,0,0,0.85);
 
 // system color
 @blue: #0f59a4;
@@ -26,7 +26,7 @@
 @red: #dc3545;
 @orange: #fd7e14;
 @yellow: #fadb14;
-@green: #52c41a;
+@green: #52c41a; 
 @teal: #20c997;
 @cyan: #17a2b8;
 
@@ -38,7 +38,20 @@
 @warning: @yellow;
 @danger: @red;
 @light: @gray-100;
-@dark: @gray-800;
+@dark: @gray-900;
+
+@theme-color: {
+  primary: @primary; 
+  secondary: @secondary;
+  success: @success;
+  info: @info;
+  warning: @warning;
+  danger: @danger;
+  light: @light;
+  dark: @dark;
+};
+
+@size-types: small, middle, large;
 
 // main font sans-serif
 @font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
@@ -283,7 +296,6 @@
 @input-group-addon-border-color: @input-border-color;
 
 // Progress bars
-
 @progress-font-size: @font-size-base * 0.75;
 @progress-bg: @gray-200;
 @progress-border-radius: @border-radius;
