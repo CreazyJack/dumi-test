@@ -1,5 +1,6 @@
 import type { InputProps } from '..'
 import classnames from 'classnames'
+import omitObj from '../../utils/omitObj'
 
 export default (props: InputProps) => {
   const size = props.size || 'middle'
@@ -14,14 +15,19 @@ export default (props: InputProps) => {
   )
   const suffixClassName = classnames('sp-input-suffix-label', `sp-input-${size}`)
   const prefixClassName = classnames('sp-input-prefix-label', `sp-input-${size}`)
-  return {
-    className,
+  const baseProps = {
     suffixClassName,
-    prefixClassName,
-    defaultValue: props.value != null ? undefined : props.defaultValue,
+    prefixClassName
+  }
+  const inputProps = {
+    ...omitObj(props, ['size']),
+    className,
     value: props.value,
-    onChange: props.onChange,
-    placeholder: props.placeholder,
-    type: 'text'
+    defaultValue: props.value != null ? undefined : props.defaultValue,
+    type: props.type ?? 'text'
+  }
+  return {
+    ...baseProps,
+    inputProps
   }
 }

@@ -12,13 +12,12 @@ export default () => {
     return () => clearInterval(interval)
   }, [])
   return (
-    <>
+    <React.Fragment>
       <Card title="不同大小">
         <div style={{ marginBottom: 16 }}>
           <div>{value}</div>
           <div
             onClick={useDebounce(() => {
-              console.log(count)
               setCount(count + 1)
             })}
           >
@@ -48,6 +47,6 @@ export default () => {
       <Card title="防抖">
         <Input prefix="prefix" suffix="suffix" onChange={debounce} />
       </Card>
-    </>
+    </React.Fragment>
   )
 }
