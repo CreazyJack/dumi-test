@@ -2,7 +2,7 @@
  * @Description: input style
  * @Date: 2021-06-23 16:07:29
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-06-28 16:48:39
+ * @LastEditTime: 2021-08-03 14:17:34
  */
 
 @import '../../styles/index';
@@ -35,10 +35,12 @@
 }
 
 each(@size-types, {
-  .sp-input-@{value} {
-    line-height: 1.2rem + @index * 0.5;
+    .sp-input-@{value} {
+      line-height: 1.2rem + @index * 0.5;
+    }
   }
-});
+
+);
 
 .sp-input-prefix-label {
   display: inline-block;
@@ -54,4 +56,27 @@ each(@size-types, {
   border: 1px solid @border-color;
   border-left: none;
   .borderRadius(right);
+}
+
+.auto-complete-ul {
+  position: absolute;
+  width: 100%;
+  margin: 0.6rem 0 0 0;
+  padding: 0.6rem 0;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  box-shadow: 1px 5px 10px #eaeaea, -1px -1px 10px #eaeaea;
+  opacity: 0;
+  background-color: #fff;
+  transition: 0.3s;
+
+  .auto-complete-li {
+    list-style-type: none;
+    padding: 5px 16px;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: lighten(@primary, 55);
+    }
+  }
 }

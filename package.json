@@ -2,7 +2,6 @@
   "private": false,
   "name": "dumi-ui-test",
   "version": "1.0.0",
-  "homepage": "https://creazyjack.github.io/dumi-ui-test",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",

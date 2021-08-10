@@ -2,29 +2,29 @@
  * @Description: SubMenu
  * @Date: 2021-05-06 10:08:14
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-14 19:57:08
+ * @LastEditTime: 2021-08-03 14:19:34
  */
 
-import React, { CSSProperties, FC, FunctionComponentElement, ReactNode } from 'react';
-import { FiChevronDown } from 'react-icons/fi';
-import { MenuItemProps } from './MenuItem';
-import ZoomTransition from '../transition/zoom';
-import RotateTransition from '../transition/rotate';
-import useSubMenu from './hooks/useSubMenu';
+import React, { CSSProperties, FC, FunctionComponentElement, ReactNode } from 'react'
+import { FiChevronDown } from 'react-icons/fi'
+import { MenuItemProps } from './MenuItem'
+import RotateTransition from '../transition/RotateTransition'
+import ZoomTransition from '../transition/ZoomTransition'
+import useSubMenu from './hooks/useSubMenu'
 
 export type SubMenuChildrenType =
   | FunctionComponentElement<MenuItemProps>
-  | Array<FunctionComponentElement<MenuItemProps>>;
+  | Array<FunctionComponentElement<MenuItemProps>>
 
 export interface SubMenuProps {
-  className?: string;
-  style?: CSSProperties;
-  title: string;
-  children?: ReactNode;
+  className?: string
+  style?: CSSProperties
+  title: string
+  children?: ReactNode
 }
 
 const SubMenu: FC<SubMenuProps> = (props) => {
-  const { children, onUlHover, onTitleClick, boxClass, ulClass, visible } = useSubMenu(props);
+  const { children, onUlHover, onTitleClick, boxClass, ulClass, visible } = useSubMenu(props)
   return (
     <li className={boxClass} {...onUlHover}>
       <div className="sub-menu-title" onClick={onTitleClick}>
@@ -39,9 +39,9 @@ const SubMenu: FC<SubMenuProps> = (props) => {
         <ul className={ulClass}>{children}</ul>
       </ZoomTransition>
     </li>
-  );
-};
+  )
+}
 
-SubMenu.displayName = 'SubMenu';
+SubMenu.displayName = 'SubMenu'
 
-export default SubMenu;
+export default SubMenu
