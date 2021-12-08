@@ -2,7 +2,7 @@
  * @Description: Button
  * @Date: 2021-05-13 14:15:20
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-14 12:54:34
+ * @LastEditTime: 2021-12-07 16:58:50
  */
 
 import React from 'react';
@@ -49,12 +49,6 @@ const Button: React.FC<ButtonProps> = (props) => {
   if (!props.children) return null;
   if (props.type === 'link') return <a {...params}>{children}</a>;
   return <button {...params}>{children}</button>;
-};
-
-Button.defaultProps = {
-  type: 'default',
-  shape: 'round',
-  size: 'middle',
 };
 
 export default Button;
